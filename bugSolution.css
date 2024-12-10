@@ -1,0 +1,20 @@
+The solution addresses the specificity issue by improving selector specificity. The `.box.blue` selector's specificity is explicitly increased to override the unintended effects of the `:not()` selector.
+
+```css
+.box {
+  background-color: lightblue;
+}
+
+.red {
+  background-color: red;
+}
+
+.box:not(.red) {
+  background-color: yellow;
+}
+
+.box.blue {
+  background-color: blue !important; /* Increased specificity */
+}
+```
+The `!important` flag is used as a last resort to increase the specificity.  In most situations, restructuring selectors is recommended rather than using `!important`.
