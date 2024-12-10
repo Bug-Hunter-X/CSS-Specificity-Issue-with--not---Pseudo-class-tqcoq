@@ -1,0 +1,19 @@
+The following CSS code snippet demonstrates an issue related to the unexpected behavior of specificity when using the `:not()` pseudo-class in combination with multiple selectors.  In this scenario, the specificity of the selector matching the `.box:not(.red)` class unexpectedly affects other elements that are supposed to be unaffected. This results in unintended styling changes. 
+
+```css
+.box {
+  background-color: lightblue;
+}
+
+.red {
+  background-color: red;
+}
+
+.box:not(.red) {
+  background-color: yellow;
+}
+
+.box.blue{
+  background-color: blue;
+}
+```
